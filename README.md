@@ -15,7 +15,7 @@ Main features:
 
 ## Installation
 ```bash
-pip install minitrainer
+pip install mini-trainer
 ```
 
 ## Quick Start
