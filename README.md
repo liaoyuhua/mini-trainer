@@ -29,7 +29,7 @@ Below is two examples for starting using mini-trainer. First is classic image cl
 
 Initialization: Trainer()
 
-|      API       |         type          |                             Desc                             |
+|      API       |         Type          |                             Desc                             |
 | :------------: | :-------------------: | :----------------------------------------------------------: |
 |     model      |       nn.Module       |                   A model object to train.                   |
 |   save_path    |          str          |       Path to save checkpoints/loss plot/log file/etc.       |
@@ -43,7 +43,7 @@ Initialization: Trainer()
 
 Model Training: fit()
 
-|       API        |            type             |                             Desc                             |
+|       API        |            Type             |                             Desc                             |
 | :--------------: | :-------------------------: | :----------------------------------------------------------: |
 | train_dataloader | torch.utils.data.DataLoader |                     Training dataloader.                     |
 |  val_dataloader  | torch.utils.data.DataLoader |                    Validation dataloader.                    |
@@ -52,18 +52,18 @@ Model Training: fit()
 
 Predicting: predict()
 
-|       API       |            type             |    Desc     |
+|       API       |            Type             |    Desc     |
 | :-------------: | :-------------------------: | :---------: |
 | test_dataloader | torch.utils.data.DataLoader | Dataloader. |
 
 Result saving: log()
 
-| API  | type |                             Desc                             |
+| API  | Type |                             Desc                             |
 | :--: | :--: | :----------------------------------------------------------: |
 | log  | dict | Anything you want to record to log file, saved as a dictionary. It is very useful for research experiments in which you can record experiment start time, version, key hyperparameters, etc. |
 
 Plot loss curve: plot_loss()
 
-| API  | type |            Desc            |
+| API  | Type |            Desc            |
 | :--: | :--: | :------------------------: |
 | save | bool | Whether to save loss plot. |
