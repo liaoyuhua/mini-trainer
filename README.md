@@ -21,9 +21,9 @@ pip install minitrainer
 ## Quick Start
 Below is two examples for starting using mini-trainer. First is classic image classification task and another is house price regression. Both of them are complete deep learning project, and you can learn how the basic usage and main APIs of this project.
 
-[MINST Classification](https://www.runoob.com)
+[MINST Classification](https://github.com/liaoyuhua/mini-trainer/tree/master/examples/image_classsification)
 
-[House Sale Price Prediction](https://www.runoob.com)
+[House Sale Price Prediction](https://github.com/liaoyuhua/mini-trainer/tree/master/examples/pirce_regression)
 
 ## Main Functions and APIs
 
