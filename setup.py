@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mini-trainer",
-    version="0.1.0",
+    version="0.1.1",
     author="Yuhua Liao",
     author_email="ml.liaoyuhua@gmail.com",
     description="A mini Trainer for PyTorch ecosystem.",
