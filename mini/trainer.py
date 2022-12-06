@@ -78,7 +78,6 @@ class Trainer:
     def fit(self, train_dataloader, val_dataloader, epochs=50, prog_bar=True):
         for i in range(epochs):
             epoch_train_loss = []
-            epoch_val_loss = []
             self.model.train()
             with tqdm(train_dataloader, unit="batch", disable=(not prog_bar)) as tepoch:
                 for x, y in tepoch:
@@ -93,30 +92,30 @@ class Trainer:
                     self.optimizer.zero_grad()
 
                     epoch_train_loss.append(loss.item())
-                    epoch_val_loss.append(self.val(val_dataloader))
+                    tepoch.set_postfix(train_loss=np.round(np.mean(epoch_train_loss), 4))
 
-                    tepoch.set_postfix(train_loss=np.round(np.mean(epoch_train_loss), 4), 
-                        valid_loss=np.round(np.mean(epoch_val_loss), 4))
-        
+            val_loss = self.val(val_dataloader)
+            tepoch.set_postfix(train_loss=np.round(np.mean(epoch_train_loss), 3), 
+                            valid_loss=np.round(val_loss, 3))
             self.train_loss.append(np.mean(epoch_train_loss))
-            self.val_loss.append(np.mean(epoch_val_loss))
+            self.val_loss.append(val_loss)
             
-            self.es(np.mean(epoch_val_loss), self.model, str(self.ckp_path))
+            self.es(val_loss, self.model, str(self.ckp_path))
             self.best_val_loss = self.es.best_score
             if self.es.early_stop:
                 break
-
+    
+    @torch.no_grad()
     def val(self, val_dataloader):
         losses = []
         self.model.eval()
-        with torch.no_grad():
-            for x, y in val_dataloader:
-                x = move_to_device(x, self.device)
-                y = move_to_device(y, self.device)
-                out = self.model(x)
-                loss = self.loss(out, y)
-                losses.append(loss.item())
-            loss_value = np.mean(losses)
+        for x, y in val_dataloader:
+            x = move_to_device(x, self.device)
+            y = move_to_device(y, self.device)
+            out = self.model(x)
+            loss = self.loss(out, y)
+            losses.append(loss.item())
+        loss_value = np.mean(losses)
         return loss_value 
     
     @timer("predicting")
