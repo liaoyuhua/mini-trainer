@@ -8,19 +8,7 @@
 
 Currently, there are many libraries that provide ability to train neural networks like PyTorch Lightning, HuggingFace transformers, and other personal projects. If we evaluate them from power and learning curve perspective, they are really located in extreme positions.
 
-We need a trainer that can be as simple as possible while meeting our needs.
-
-So this trainer should be easy and flexible.
-
-Easy to use and understand. 
-
-- Main class has only less than 200 lines of code. Trainer class is the only class that every user needs to know.
-- Arguments of main class are limited to 5.
-
-Flexible to meet users with various backgrounds and needs.
-
-- This trainer is built on top of the extension system. Except those necessary methods, everything is an extension. This leads to a
-
+Thus, we need a trainer that can be as simple as possible while meeting our needs.
 
 ## 🔠 Concepts
 
@@ -57,16 +45,12 @@ Flexible to meet users with various backgrounds and needs.
 
 ### Template
 
-
 ## 🛠️ Installation & Usage
 
 ## 🌟 Customization
 
 
 ## 🥇 Best Practices
-
-sample weighted loss
-
 
 ## 👨‍💻 Contributing
 
