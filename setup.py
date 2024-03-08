@@ -11,7 +11,7 @@ setuptools.setup(
     version=mini_trainer.__version__,
     author="liaoyuhua",
     author_email="ml.liaoyuhua@gmail.com",
-    description="The PyTorch micro framework for mini_trainer neural networks.",
+    description="The PyTorch micro framework for training neural networks.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/liaoyuhua/mini-trainer",
@@ -22,5 +22,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.9',
+    python_requires=">=3.9",
 )

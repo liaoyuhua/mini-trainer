@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="./img/logo.png" alt="Logo" width="200"/>
+<img src="./img/logo.png" alt="Logo" width="260"/>
 
 The PyTorch micro framework for training neural networks.
 
